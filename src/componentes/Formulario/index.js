@@ -19,10 +19,11 @@ const Formulario = () => {
     const [nome, setNome] = useState('')
     const [cargo, setCargo] = useState('')
     const [imagem, setImagem] = useState('')
+    const [time, setTime] = useState('')
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('Formulario foi submetido!', nome, cargo, imagem)
+        console.log('Formulario foi submetido!', nome, cargo, imagem, time)
     }
 
     return (
@@ -49,7 +50,14 @@ const Formulario = () => {
                     valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
                 />
-                <ListaSuspensa obrigatorio={true} label="Times" itens={times}/>
+                <ListaSuspensa
+                    obrigatorio={true}
+                    label="Times"
+                    itens={times}
+                    valor={time}
+                    aoAlterado={valor => setTime(valor)}
+
+                />
                 <Botao>
                     Criar Card
                 </Botao>
